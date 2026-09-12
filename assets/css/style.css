@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Marais Durable — feuille de style unique
+   Palette tirée du marais : eau sombre, vert d'eau, roseau sec, craie.
+   ========================================================================== */
+
+:root{
+  --encre:#12261F;
+  --marais:#2F5D4A;
+  --marais-clair:#4A7F66;
+  --roseau:#C9A227;
+  --craie:#E9ECE3;
+  --papier:#FBFBF7;
+  --pierre:#63705F;
+  --alerte:#B22A1F;
+  --ombre:0 2px 10px rgba(18,38,31,.08);
+  --mesure:68ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:5.5rem}
+body{
+  margin:0;
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-size:1.0625rem;
+  line-height:1.65;
+  color:var(--encre);
+  background:var(--papier);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--marais);text-underline-offset:3px}
+a:hover{color:var(--alerte)}
+
+h1,h2,h3,.display{
+  font-family:"Anton",Impact,"Haettenschweiler",sans-serif;
+  font-weight:400;line-height:1.06;letter-spacing:.002em;
+  text-transform:uppercase;margin:0 0 .5em;
+}
+h1{font-size:clamp(2rem,5.5vw,3.4rem)}
+h2{font-size:clamp(1.5rem,3.4vw,2.15rem);margin-top:2.2em}
+h3{font-size:clamp(1.1rem,2.2vw,1.35rem);margin-top:1.8em;color:var(--marais)}
+p,ul,ol,table{margin:0 0 1.1em}
+ul,ol{padding-left:1.2em}
+li{margin-bottom:.4em}
+strong{font-weight:700}
+
+.wrap{width:min(100% - 2.5rem,1080px);margin-inline:auto}
+.narrow{max-width:var(--mesure)}
+.section{padding:3rem 0}
+.section--sombre{background:var(--encre);color:var(--craie)}
+.section--sombre h2{color:var(--roseau)}
+.section--sombre a{color:var(--roseau)}
+.section--sombre .bouton{color:var(--encre)}
+.section--sombre .bouton:hover{color:var(--roseau)}
+.section--sombre .bouton--fantome{color:var(--craie)}
+.section--sombre .bouton--fantome:hover{color:var(--encre)}
+.section--craie{background:var(--craie)}
+
+/* ---------- en-tête ---------- */
+.bandeau{
+  background:var(--encre);color:var(--craie);
+  font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;
+  padding:.55rem 0;font-family:system-ui,sans-serif;
+}
+.bandeau .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.bandeau span{opacity:.8}
+
+.entete{border-bottom:2px solid var(--marais);background:var(--papier);
+  position:sticky;top:0;z-index:20}
+.entete .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.9rem 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--encre)}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font-family:"Anton",sans-serif;font-size:1.28rem;letter-spacing:.01em;
+  text-transform:uppercase;line-height:1;display:block}
+.logo small{font-family:system-ui,sans-serif;font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--pierre);display:block;margin-top:2px}
+
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{font-family:system-ui,sans-serif;font-size:.9rem;text-decoration:none;
+  color:var(--encre);padding-bottom:2px;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--alerte);color:var(--encre)}
+
+/* ---------- héros ---------- */
+.hero{background:var(--encre);color:var(--craie);padding:3.5rem 0 3rem}
+.hero h1{color:#fff}
+.hero h1 em{font-style:normal;color:var(--roseau);display:block}
+.hero p.chapo{font-size:1.18rem;max-width:60ch;color:#D6DBCF}
+.hero .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+
+.bouton{
+  display:inline-block;font-family:system-ui,sans-serif;font-size:.95rem;
+  font-weight:600;text-decoration:none;padding:.75rem 1.4rem;border:2px solid var(--roseau);
+  background:var(--roseau);color:var(--encre);transition:.15s;
+}
+.bouton:hover{background:transparent;color:var(--roseau)}
+.bouton--fantome{background:transparent;color:var(--craie);border-color:var(--craie)}
+.bouton--fantome:hover{background:var(--craie);color:var(--encre)}
+.bouton--plein{border-color:var(--marais);background:var(--marais);color:#fff}
+.bouton--plein:hover{background:transparent;color:var(--marais)}
+
+/* ---------- chiffres ---------- */
+.chiffres{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  margin:2rem 0 0;padding:0;list-style:none}
+.chiffre{background:var(--papier);border-left:4px solid var(--roseau);padding:1.1rem 1.2rem;
+  box-shadow:var(--ombre)}
+.chiffre b{font-family:"Anton",sans-serif;font-size:2.1rem;line-height:1;display:block;
+  color:var(--alerte);margin-bottom:.35rem}
+.chiffre span{font-size:.95rem;line-height:1.45;display:block;color:var(--encre)}
+
+/* ---------- cartes / blocs ---------- */
+.grille{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.carte{background:#fff;border:1px solid #D8DED2;padding:1.4rem 1.5rem;box-shadow:var(--ombre)}
+.carte h3{margin-top:0}
+.carte p:last-child{margin-bottom:0}
+
+.encadre{border-left:4px solid var(--marais);background:var(--craie);
+  padding:1.2rem 1.4rem;margin:1.8rem 0}
+.encadre p:last-child{margin-bottom:0}
+.encadre--alerte{border-left-color:var(--alerte);background:#F7EAE8}
+
+blockquote{margin:1.6rem 0;padding:1rem 1.4rem;border-left:4px solid var(--roseau);
+  background:var(--craie);font-size:1.1rem}
+blockquote p:last-child{margin-bottom:0}
+
+table{border-collapse:collapse;width:100%;font-size:.98rem}
+th,td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid #D8DED2}
+th{font-family:system-ui,sans-serif;font-size:.82rem;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--marais)}
+tbody tr:last-child td{border-bottom:none}
+
+.frise{list-style:none;padding:0;margin:1.6rem 0;border-left:3px solid var(--marais)}
+.frise li{padding:0 0 1.1rem 1.4rem;position:relative;margin:0}
+.frise li::before{content:"";position:absolute;left:-8px;top:.55em;width:13px;height:13px;
+  background:var(--marais);border-radius:50%}
+.frise li.maintenant::before{background:var(--alerte)}
+.frise b{font-family:system-ui,sans-serif;font-size:.82rem;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--marais);display:block}
+.frise li.maintenant b{color:var(--alerte)}
+
+.docs{list-style:none;padding:0;margin:0;display:grid;gap:.9rem}
+.docs a{display:flex;gap:.9rem;align-items:baseline;text-decoration:none;color:var(--encre);
+  background:#fff;border:1px solid #D8DED2;padding:1rem 1.2rem;box-shadow:var(--ombre)}
+.docs a:hover{border-color:var(--marais)}
+.docs strong{display:block;font-size:1.02rem}
+.docs em{font-style:normal;font-size:.88rem;color:var(--pierre);display:block;margin-top:.2rem}
+.docs .ext{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--marais);border:1px solid var(--marais);
+  padding:.15rem .45rem;flex:none}
+
+.sources{font-size:.86rem;color:var(--pierre);line-height:1.5}
+
+/* ---------- pied ---------- */
+.pied{background:var(--encre);color:var(--craie);padding:2.6rem 0 1.6rem;margin-top:3rem}
+.pied a{color:var(--roseau)}
+.pied .grille{gap:2rem}
+.pied h3{color:var(--roseau);margin-top:0;font-size:1rem}
+.pied p,.pied li{font-size:.94rem}
+.pied ul{list-style:none;padding:0}
+.legal{border-top:1px solid rgba(233,236,227,.25);margin-top:2rem;padding-top:1.2rem;
+  font-size:.8rem;color:#A8B3A4;font-family:system-ui,sans-serif}
+
+@media (max-width:640px){
+  .entete .wrap{flex-direction:column;align-items:flex-start}
+  nav ul{gap:1rem}
+  .section{padding:2.2rem 0}
+}
+@media print{
+  .entete,.bandeau,nav,.hero .actions{display:none}
+  body{background:#fff;font-size:11pt}
+}
+
+
+/* ---------- formulaire de pétition ---------- */
+.formulaire{max-width:34rem}
+.champ{margin-bottom:1.1rem}
+.champ label{display:block;font-family:system-ui,sans-serif;font-size:.9rem;font-weight:600;
+  margin-bottom:.3rem}
+.champ label span[aria-hidden]{color:var(--alerte)}
+.champ .option{font-weight:400;color:var(--pierre)}
+.champ input[type=text],.champ input[type=email]{
+  width:100%;padding:.7rem .8rem;font-family:inherit;font-size:1rem;color:var(--encre);
+  background:#fff;border:1.5px solid #BFC8BA;border-radius:2px}
+.champ input:focus{outline:3px solid rgba(47,93,74,.35);outline-offset:1px;border-color:var(--marais)}
+.champ--case{display:flex;gap:.7rem;align-items:flex-start;margin:1.5rem 0}
+.champ--case input{margin-top:.35rem;width:1.15rem;height:1.15rem;flex:none;accent-color:var(--marais)}
+.champ--case label{font-weight:400;font-size:.92rem;line-height:1.45;margin:0}
+.piege{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.formulaire button{cursor:pointer;font-size:1rem}
+.message{margin-top:1rem;font-size:.95rem;min-height:1.4em}
+.message--succes{color:var(--marais);font-weight:600}
+.message--erreur{color:var(--alerte);font-weight:600}
+
+/* ---------- logo ---------- */
+.logo img{width:46px;height:46px;flex:none}
+
+/* ---------- héros photographique ---------- */
+.hero--photo{position:relative;background:var(--encre) center/cover no-repeat;
+  padding:0;min-height:min(78vh,640px);display:flex;align-items:flex-end}
+.hero--photo::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,38,31,.05) 20%,rgba(18,38,31,.82) 100%)}
+.hero--photo .wrap{position:relative;padding:5rem 0 3rem}
+.hero--photo h1{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero--photo p.chapo{color:#EEF1E8;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero--court{min-height:min(52vh,420px)}
+.hero--photo .surtitre{color:#fff;background:rgba(18,38,31,.72);display:inline-block;padding:.3rem .65rem}
+.wrap--gauche>*{max-width:var(--mesure)}
+.surtitre{font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--roseau);margin:0 0 .8rem;font-weight:600}
+.credit-hero{position:absolute;right:.8rem;bottom:.5rem;z-index:1;font-family:system-ui,sans-serif;
+  font-size:.68rem;color:rgba(255,255,255,.7)}
+.credit-hero a{color:inherit}
+
+/* ---------- encart actualité (accueil) ---------- */
+.actu{background:var(--alerte);color:#fff;padding:2.4rem 0}
+.actu .wrap{display:grid;gap:1.4rem 2.4rem;grid-template-columns:1fr auto;align-items:center}
+.actu .etiquette{display:inline-block;font-family:system-ui,sans-serif;font-size:.74rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--alerte);
+  padding:.3rem .7rem;margin-bottom:.9rem}
+.actu h2{margin:0 0 .5rem;color:#fff;font-size:clamp(1.4rem,3.2vw,2.1rem)}
+.actu p{margin:0;max-width:62ch;color:#FBEDEA}
+.actu .actions{display:flex;flex-direction:column;gap:.7rem}
+.actu .bouton{background:#fff;border-color:#fff;color:var(--alerte);text-align:center}
+.actu .bouton:hover{background:transparent;color:#fff}
+.actu .bouton--fantome{background:transparent;color:#fff}
+.actu .bouton--fantome:hover{background:#fff;color:var(--alerte)}
+@media (max-width:760px){.actu .wrap{grid-template-columns:1fr}.actu .actions{flex-direction:row;flex-wrap:wrap}}
+
+/* ---------- photos ---------- */
+.carte--photo{padding:0;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--encre)}
+.carte--photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.carte--photo .corps{padding:1.2rem 1.4rem 1.4rem}
+.carte--photo .corps h3{margin-top:0}
+a.carte--photo:hover{border-color:var(--marais)}
+a.carte--photo:hover h3{color:var(--alerte)}
+figure{margin:1.8rem 0}
+figure img{width:100%;height:auto}
+figcaption{font-size:.86rem;color:var(--pierre);margin-top:.5rem;line-height:1.45}
+.credit{font-family:system-ui,sans-serif;font-size:.72rem;color:#8A9486;display:block;margin-top:.15rem}
+.credit a{color:inherit}
+.galerie{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:1.6rem 0 0}
+.galerie figure{margin:0}
+.galerie img{aspect-ratio:4/3;object-fit:cover}
+.duo{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.duo figure{margin-top:.4rem}
+.chiffres--marais .chiffre{border-left-color:var(--marais)}
+.chiffres--marais .chiffre b{color:var(--marais)}
+
+/* ---------- fil d'Ariane et nouvelles ---------- */
+.fil{font-family:system-ui,sans-serif;font-size:.82rem;margin:0 0 1rem;color:var(--roseau)}
+.fil a{color:var(--roseau)}
+.nouvelles{list-style:none;padding:0;margin:1.4rem 0 0}
+.nouvelles li{padding:1rem 0;border-bottom:1px solid #D8DED2;margin:0}
+.nouvelles time{font-family:system-ui,sans-serif;font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--marais);display:block;font-weight:600}

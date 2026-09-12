@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Marais Durable">
+  <circle cx="32" cy="32" r="32" fill="#2F5D4A"/>
+  <g stroke="#C9A227" stroke-width="1.7" stroke-linecap="round" fill="none">
+    <path d="M27 24 C23 18 19 14 14 12"/>
+    <path d="M29 23 C27 16 25 11 23 7"/>
+    <path d="M32 23 C32 16 32 10 32 5"/>
+    <path d="M35 23 C37 16 39 11 41 7"/>
+    <path d="M37 24 C41 18 45 14 50 12"/>
+    <path d="M26 26 C21 23 17 22 12 22"/>
+    <path d="M38 26 C43 23 47 22 52 22"/>
+  </g>
+  <path d="M25.5 26.5 C24 24 27 22.5 32 22.5 C37 22.5 40 24 38.5 26.5 C37 29 36 32 36.2 36 C36.4 39.5 37.5 42 39 44 L25 44 C26.5 42 27.6 39.5 27.8 36 C28 32 27 29 25.5 26.5 Z" fill="#E9ECE3"/>
+  <path d="M10 46.5 C15 44.5 19 44.5 24 46.5 S33 48.5 38 46.5 S48 44.5 54 46.5" stroke="#E9ECE3" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M14 52 C18 50.5 21 50.5 25 52 S32 53.5 36 52 S45 50.5 50 52" stroke="#E9ECE3" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/>
+  <path d="M29 56.5 H35" stroke="#C9A227" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+</svg>
