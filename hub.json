@@ -1,0 +1,29 @@
+{
+  "id": "maraisdurable",
+  "name": "Marais Durable",
+  "tagline": "Site de l'association Marais Durable (loi 1901)",
+  "path": "/Users/damient/Developer/maraisdurable",
+  "updated": "2026-09-14",
+  "summary": "Site vitrine de l'association Marais Durable : le marais, faune et flore, dossier éolien (projet, arguments sourcés, pétition), adhésion et documents. Statique HTML/CSS pur, douze pages sans gabarit ni build, hébergé sur GitHub Pages avec le domaine maraisdurable.com. En ligne ; reste à activer le formulaire de pétition (Formspree), déposer les PDF dans documents/ et compléter la date de réunion publique.",
+  "local": [
+    {
+      "label": "Site",
+      "url": "http://localhost:8777/sites/maraisdurable/",
+      "kind": "static",
+      "static": "maraisdurable",
+      "display": "via le hub",
+      "note": "copie locale servie par le hub (port 8777)"
+    }
+  ],
+  "remote": [
+    {"label": "Production", "url": "https://maraisdurable.com/"}
+  ],
+  "docker": [],
+  "launchd": [],
+  "github": {"url": "https://github.com/damientam/maraisdurable", "visibility": "public"},
+  "start": [
+    "Aucun serveur local nécessaire : le hub sert ~/Developer/maraisdurable",
+    "Alternative : python3 -m http.server 8124 -d ~/Developer/maraisdurable",
+    "Déploiement : git push origin main (GitHub Pages, 1 à 2 min)"
+  ]
+}
