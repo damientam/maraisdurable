@@ -237,8 +237,8 @@ maraisdurable.com</p>
     <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
   </div>
   <div class="champ">
-    <label for="phone">Téléphone portable <span class="option">(facultatif)</span></label>
-    <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}"
+    <label for="telephone">Téléphone portable <span aria-hidden="true">*</span></label>
+    <input type="tel" id="telephone" name="telephone" required maxlength="10" pattern="[0-9]{10}"
       inputmode="numeric" autocomplete="tel-national" placeholder="0601020304"
       title="10 chiffres sans espace, par exemple 0601020304">
   </div>
@@ -252,9 +252,9 @@ maraisdurable.com</p>
   <div class="champ champ--case">
     <input type="checkbox" id="consentement" name="consentement" required value="oui">
     <label for="consentement">J&rsquo;ai lu la pétition et je la signe. J&rsquo;accepte que mes nom,
-      prénom et adresse électronique soient conservés par l&rsquo;association Marais Durable aux
-      seules fins de remettre cette pétition aux autorités destinataires et de me tenir informé de
-      sa suite. <span aria-hidden="true">*</span></label>
+      prénom, adresse électronique et numéro de téléphone soient conservés par l&rsquo;association
+      Marais Durable aux seules fins de remettre cette pétition aux autorités destinataires, de me
+      tenir informé de sa suite et, si besoin, de vérifier ma signature. <span aria-hidden="true">*</span></label>
   </div>
 
   <button type="submit" class="bouton bouton--plein">Signer la pétition</button>
@@ -265,8 +265,10 @@ maraisdurable.com</p>
 du traitement : association Marais Durable. Finalité : recueil et remise de la pétition. Base légale : votre
 consentement. Destinataires : les seuls membres du bureau de l&rsquo;association ; les nom et
 prénom des signataires figureront sur la pétition remise aux autorités,
-<strong>les adresses électroniques ne seront jamais communiquées ni publiées</strong>. Conservation :
-jusqu&rsquo;à un an après la clôture du dossier. Vous pouvez retirer votre signature à tout moment
+<strong>les adresses électroniques et les numéros de téléphone ne seront jamais communiqués ni
+publiés</strong>. Le numéro de téléphone sert à vous informer des suites de la pétition et, si
+besoin, à vérifier votre signature. Conservation : 36 mois après la signature ; les signatures
+sont ensuite effacées automatiquement. Vous pouvez retirer votre signature à tout moment
 en écrivant à <a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a>.</p>
 </div></section>
 
@@ -293,7 +295,7 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
   };
   var libelles = {
     prenom: 'Prénom', nom: 'Nom', email: 'Adresse électronique',
-    phone: 'Téléphone portable', commune: 'Commune', consentement: 'Case de signature'
+    telephone: 'Téléphone portable', commune: 'Commune', consentement: 'Case de signature'
   };
 
   f.addEventListener('submit', function (e) {
