@@ -238,9 +238,11 @@ maraisdurable.com</p>
   </div>
   <div class="champ">
     <label for="telephone">Téléphone portable <span aria-hidden="true">*</span></label>
-    <input type="tel" id="telephone" name="telephone" required maxlength="10" pattern="[0-9]{10}"
-      inputmode="numeric" autocomplete="tel-national" placeholder="0601020304"
-      title="10 chiffres sans espace, par exemple 0601020304">
+    <small class="aide" id="aide-telephone">Pour vous informer des suites de la pétition.
+      Par exemple&nbsp;: 06&nbsp;01&nbsp;02&nbsp;03&nbsp;04</small>
+    <input type="tel" id="telephone" name="telephone" required maxlength="20"
+      pattern="(\+33|0)[ .\-]*[1-9]([ .\-]*[0-9]){8}" inputmode="tel" autocomplete="tel-national"
+      aria-describedby="aide-telephone">
   </div>
   <div class="champ">
     <label for="commune">Commune <span class="option">(facultatif)</span></label>
@@ -284,6 +286,7 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
   var f = document.getElementById('formPetition');
   var msg = document.getElementById('messageFormulaire');
   if (!f) return;
+  var tel = document.getElementById('telephone');
   var configure = f.action.indexOf('VOTRE_IDENTIFIANT') === -1;
   var messages = {
     missing_field: 'Merci de remplir ce champ.',
@@ -307,6 +310,7 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
       return;
     }
     e.preventDefault();
+    tel.value = normaliser(tel.value);
     msg.className = 'message';
     msg.textContent = 'Envoi en cours…';
     fetch(f.action, {
@@ -326,6 +330,21 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
     }).catch(echec);
   });
 
+  // The service expects exactly 10 digits: "+33 6 01…" or "06.01…" become "0601…".
+  function normaliser(v) {
+    v = v.replace(/[\s.\-]/g, '');
+    return v.indexOf('+33') === 0 ? '0' + v.slice(3) : v;
+  }
+
+  tel.addEventListener('invalid', function () {
+    tel.setCustomValidity(tel.validity.valueMissing ? '' :
+      'Indiquez un numéro à 10 chiffres, par exemple 06 01 02 03 04.');
+  });
+  f.addEventListener('input', function (e) {
+    e.target.removeAttribute('aria-invalid');
+    if (e.target === tel) tel.setCustomValidity('');
+  });
+
   function afficherErreur(code, champ) {
     var texte = messages[code];
     if (!texte) return false;
@@ -333,7 +352,7 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
     if (nom && (code === 'missing_field' || code === 'field_too_long' || code === 'invalid_field')) {
       texte = nom + ' : ' + texte.charAt(0).toLowerCase() + texte.slice(1);
       var saisie = document.getElementById(champ);
-      if (saisie) saisie.focus();
+      if (saisie) { saisie.setAttribute('aria-invalid', 'true'); saisie.focus(); }
     }
     msg.className = 'message message--erreur';
     msg.textContent = texte;
