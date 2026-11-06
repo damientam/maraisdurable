@@ -237,6 +237,12 @@ maraisdurable.com</p>
     <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
   </div>
   <div class="champ">
+    <label for="phone">Téléphone portable <span class="option">(facultatif)</span></label>
+    <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}"
+      inputmode="numeric" autocomplete="tel-national" placeholder="0601020304"
+      title="10 chiffres sans espace, par exemple 0601020304">
+  </div>
+  <div class="champ">
     <label for="commune">Commune <span class="option">(facultatif)</span></label>
     <input type="text" id="commune" name="commune" maxlength="100" autocomplete="address-level2">
   </div>
@@ -287,7 +293,7 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
   };
   var libelles = {
     prenom: 'Prénom', nom: 'Nom', email: 'Adresse électronique',
-    commune: 'Commune', consentement: 'Case de signature'
+    phone: 'Téléphone portable', commune: 'Commune', consentement: 'Case de signature'
   };
 
   f.addEventListener('submit', function (e) {
