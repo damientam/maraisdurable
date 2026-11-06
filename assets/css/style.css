@@ -179,7 +179,8 @@ tbody tr:last-child td{border-bottom:none}
   margin-bottom:.3rem}
 .champ label span[aria-hidden]{color:var(--alerte)}
 .champ .option{font-weight:400;color:var(--pierre)}
-.champ input[type=text],.champ input[type=email],.champ input[type=tel]{
+.champ input[type=text],.champ input[type=email],.champ input[type=tel],
+.champ input[type=date],.champ input[type=number],.champ textarea{
   width:100%;padding:.7rem .8rem;font-family:inherit;font-size:1rem;color:var(--encre);
   background:#fff;border:1.5px solid #BFC8BA;border-radius:2px}
 .champ input:focus{outline:3px solid rgba(47,93,74,.35);outline-offset:1px;border-color:var(--marais)}
@@ -187,6 +188,16 @@ tbody tr:last-child td{border-bottom:none}
   color:var(--pierre)}
 .champ input[type=tel]{max-width:14rem;letter-spacing:.04em}
 .champ input[aria-invalid=true]{border-color:var(--alerte)}
+.champ input.court{max-width:10rem}
+.champ textarea{resize:vertical;line-height:1.45}
+.champ--retrait{margin-left:1.85rem}
+.formulaire fieldset{border:0;padding:0;margin:0 0 2rem}
+.formulaire legend{padding:0;margin-bottom:.8rem;font-family:'Anton',sans-serif;font-size:1.25rem;
+  letter-spacing:.02em;color:var(--marais)}
+.formulaire legend span[aria-hidden],.formulaire .sous-titre span[aria-hidden]{color:var(--alerte)}
+.formulaire .sous-titre{margin:1.2rem 0 .6rem;font-family:system-ui,sans-serif;font-size:.9rem;font-weight:600}
+.formulaire .aide-bloc{font-size:.9rem;color:var(--pierre)}
+.formulaire fieldset .champ--case{margin:.6rem 0}
 .champ--case{display:flex;gap:.7rem;align-items:flex-start;margin:1.5rem 0}
 .champ--case input{margin-top:.35rem;width:1.15rem;height:1.15rem;flex:none;accent-color:var(--marais)}
 .champ--case label{font-weight:400;font-size:.92rem;line-height:1.45;margin:0}

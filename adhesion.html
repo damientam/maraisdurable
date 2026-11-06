@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Adhérer — Marais Durable</title>
+<meta name="description" content="Demandez votre adhésion à l&rsquo;association Marais Durable : bulletin d&rsquo;adhésion en ligne, cotisation annuelle de 1 €.">
+<meta property="og:title" content="Adhérer — Marais Durable">
+<meta property="og:description" content="Demandez votre adhésion à l&rsquo;association Marais Durable : bulletin d&rsquo;adhésion en ligne, cotisation annuelle de 1 €.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://maraisdurable.com/assets/img/conche-lentilles.jpg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="bandeau"><div class="wrap">
+  <span>Association loi 1901 &middot; Parc naturel r&eacute;gional du Marais poitevin</span>
+  <span>Cram-Chaban &middot; Cour&ccedil;on &middot; La Laigne &middot; La Gr&egrave;ve-sur-Mignon &middot; Saint-Hilaire-la-Palud</span>
+</div></div>
+
+<header class="entete"><div class="wrap">
+  <a class="logo" href="index.html">
+    <img src="assets/img/logo.svg" alt="" width="46" height="46">
+    <span><b>Marais Durable</b><small>Protéger le Marais poitevin</small></span>
+  </a>
+  <nav aria-label="Navigation principale"><ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="le-marais.html">Le marais</a></li>
+    <li><a href="faune-flore.html">Faune et flore</a></li>
+    <li><a href="actualites.html">Actualités</a></li>
+    <li><a href="agir.html" aria-current="page">Agir</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="association.html">L&rsquo;association</a></li>
+  </ul></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <p class="fil"><a href="agir.html">Agir</a> &rsaquo; Adhérer</p>
+  <h1>Bulletin d&rsquo;adhésion</h1>
+  <p class="chapo">Association «&nbsp;Marais Durable&nbsp;», régie par la loi du 1<sup>er</sup> juillet 1901.
+    Siège social : 79210 Saint-Hilaire-la-Palud.</p>
+  <div class="actions"><a class="bouton" href="#adherer">Aller au formulaire</a></div>
+</div></section>
+
+<section class="section"><div class="wrap narrow">
+<div class="encadre">
+<p><strong>Catégorie :</strong> membre adhérent (sympathisant). <strong>Cotisation annuelle :</strong>
+1&nbsp;€. <strong>Cotisation de soutien :</strong> montant libre, supérieur à 1&nbsp;€.</p>
+</div>
+</div></section>
+
+<section class="section section--craie" id="adherer"><div class="wrap narrow">
+
+<form class="formulaire" id="formAdhesion" method="POST"
+      action="https://forms.gestemental.com/v1/maraisdurable/adhesion">
+
+<fieldset>
+  <legend>1. Identité du demandeur</legend>
+  <div class="champ">
+    <label for="nom">Nom <span aria-hidden="true">*</span></label>
+    <input type="text" id="nom" name="nom" required maxlength="100" autocomplete="family-name">
+  </div>
+  <div class="champ">
+    <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+    <input type="text" id="prenom" name="prenom" required maxlength="100" autocomplete="given-name">
+  </div>
+  <div class="champ">
+    <label for="naissance">Date de naissance <span aria-hidden="true">*</span></label>
+    <input type="date" id="naissance" name="naissance" required min="1900-01-01" autocomplete="bday">
+  </div>
+  <div class="champ">
+    <label for="adresse">Adresse <span aria-hidden="true">*</span></label>
+    <input type="text" id="adresse" name="adresse" required maxlength="200" autocomplete="street-address">
+  </div>
+  <div class="champ">
+    <label for="code_postal">Code postal <span aria-hidden="true">*</span></label>
+    <input type="text" id="code_postal" name="code_postal" required maxlength="5" pattern="[0-9]{5}"
+      inputmode="numeric" autocomplete="postal-code" class="court">
+  </div>
+  <div class="champ">
+    <label for="commune">Commune <span aria-hidden="true">*</span></label>
+    <input type="text" id="commune" name="commune" required maxlength="100" autocomplete="address-level2">
+  </div>
+  <div class="champ">
+    <label for="telephone">Téléphone <span class="option">(facultatif)</span></label>
+    <small class="aide" id="aide-telephone">Par exemple&nbsp;: 06&nbsp;01&nbsp;02&nbsp;03&nbsp;04</small>
+    <input type="tel" id="telephone" name="telephone" maxlength="20"
+      pattern="(\+33|0)[ .\-]*[1-9]([ .\-]*[0-9]){8}" inputmode="tel" autocomplete="tel-national"
+      aria-describedby="aide-telephone">
+  </div>
+  <div class="champ">
+    <label for="email">Courriel <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>2. Objet de la demande</legend>
+  <p>Je demande mon adhésion à l&rsquo;association «&nbsp;Marais Durable&nbsp;» en qualité de membre
+    adhérent (sympathisant), au sens de l&rsquo;article 6, 3° des statuts.</p>
+</fieldset>
+
+<fieldset>
+  <legend>3. Cotisation <span aria-hidden="true">*</span></legend>
+  <div class="champ champ--case">
+    <input type="radio" id="cotisation_annuelle" name="cotisation" value="annuelle" required checked>
+    <label for="cotisation_annuelle">Cotisation annuelle : 1&nbsp;€ (un euro)</label>
+  </div>
+  <div class="champ champ--case">
+    <input type="radio" id="cotisation_soutien" name="cotisation" value="soutien">
+    <label for="cotisation_soutien">Cotisation de soutien : montant libre, supérieur à 1&nbsp;€</label>
+  </div>
+  <div class="champ champ--retrait" id="bloc_montant" hidden>
+    <label for="montant_soutien">Montant de la cotisation de soutien, en euros <span aria-hidden="true">*</span></label>
+    <input type="number" id="montant_soutien" name="montant_soutien" min="1.01" max="100000" step="0.01"
+      inputmode="decimal" class="court" disabled>
+  </div>
+
+  <p class="sous-titre">Mode de règlement <span aria-hidden="true">*</span></p>
+  <div class="champ champ--case">
+    <input type="radio" id="reglement_especes" name="reglement" value="especes" required>
+    <label for="reglement_especes">Espèces</label>
+  </div>
+  <div class="champ champ--case">
+    <input type="radio" id="reglement_cheque" name="reglement" value="cheque">
+    <label for="reglement_cheque">Chèque à l&rsquo;ordre de «&nbsp;Marais Durable&nbsp;»</label>
+  </div>
+  <div class="champ champ--case">
+    <input type="radio" id="reglement_virement" name="reglement" value="virement">
+    <label for="reglement_virement">Virement</label>
+  </div>
+  <p class="aide-bloc">Le règlement en ligne sera bientôt possible.</p>
+</fieldset>
+
+<fieldset>
+  <legend>4. Engagements du demandeur</legend>
+  <p>En envoyant le présent bulletin, je déclare :</p>
+  <div class="champ champ--case">
+    <input type="checkbox" id="statuts" name="statuts" value="oui" required>
+    <label for="statuts">avoir pris connaissance des statuts de l&rsquo;association et, le cas
+      échéant, de son règlement intérieur, et m&rsquo;engager à les respecter ; <span aria-hidden="true">*</span></label>
+  </div>
+  <div class="champ champ--case">
+    <input type="checkbox" id="engagement_republicain" name="engagement_republicain" value="oui" required>
+    <label for="engagement_republicain">m&rsquo;engager à respecter le contrat d&rsquo;engagement
+      républicain souscrit par l&rsquo;association en application de l&rsquo;article 10-1 de la loi
+      n° 2000-321 du 12 avril 2000 ; <span aria-hidden="true">*</span></label>
+  </div>
+  <div class="champ champ--case">
+    <input type="checkbox" id="confidentialite" name="confidentialite" value="oui" required>
+    <label for="confidentialite">ne pas divulguer les documents, pièces et informations relatifs aux
+      procédures engagées ou envisagées par l&rsquo;association, ni sa stratégie contentieuse
+      (article 8.4 des statuts), cet engagement survivant à la perte de la qualité de membre.
+      <span aria-hidden="true">*</span></label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>5. Déclaration d&rsquo;intérêts (article 8 des statuts) <span aria-hidden="true">*</span></legend>
+  <p>Je déclare, sur l&rsquo;honneur, n&rsquo;entretenir aucune relation d&rsquo;intérêt, directement,
+    par mon conjoint ou partenaire, mes ascendants ou descendants, ou par toute personne morale que je
+    contrôle ou dans laquelle j&rsquo;exerce des fonctions, avec un porteur de projet, un exploitant,
+    un développeur, un investisseur, un bureau d&rsquo;études ou un prestataire intervenant sur un
+    projet entrant dans le champ de l&rsquo;article 2.3 des statuts, notamment par l&rsquo;effet
+    d&rsquo;un contrat de travail, d&rsquo;un mandat, d&rsquo;une prestation, d&rsquo;une promesse de
+    bail, d&rsquo;une convention d&rsquo;occupation, d&rsquo;une servitude ou d&rsquo;une participation
+    financière.</p>
+  <div class="champ champ--case">
+    <input type="radio" id="interets_aucun" name="interets" value="confirme" required>
+    <label for="interets_aucun">Je confirme cette déclaration.</label>
+  </div>
+  <div class="champ champ--case">
+    <input type="radio" id="interets_signale" name="interets" value="signale">
+    <label for="interets_signale">Je signale la situation suivante :</label>
+  </div>
+  <div class="champ champ--retrait" id="bloc_situation" hidden>
+    <label for="situation">Situation à signaler <span aria-hidden="true">*</span></label>
+    <textarea id="situation" name="situation" rows="4" maxlength="1000" disabled></textarea>
+  </div>
+  <p class="aide-bloc">Je m&rsquo;engage à informer sans délai la présidente de toute relation
+    d&rsquo;intérêt survenant en cours d&rsquo;adhésion. Le défaut de déclaration ou une déclaration
+    inexacte constitue un motif grave au sens de l&rsquo;article 10 des statuts.</p>
+</fieldset>
+
+<fieldset>
+  <legend>6. Données personnelles</legend>
+  <p class="aide-bloc">Les informations recueillies sont traitées par l&rsquo;association
+    «&nbsp;Marais Durable&nbsp;», responsable de traitement, aux seules fins de gestion des adhésions,
+    d&rsquo;appel des cotisations, d&rsquo;information des membres et de convocation aux assemblées.
+    Elles sont conservées pendant la durée de l&rsquo;adhésion, puis trois ans à compter de sa
+    cessation, et ne font l&rsquo;objet d&rsquo;aucune cession ni communication à des tiers. Vous
+    disposez d&rsquo;un droit d&rsquo;accès, de rectification, d&rsquo;effacement, de limitation et
+    d&rsquo;opposition, exerçable par courrier au siège de l&rsquo;association ou par courriel à
+    <a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a>, ainsi que du droit
+    d&rsquo;introduire une réclamation auprès de la CNIL.</p>
+  <div class="champ champ--case">
+    <input type="checkbox" id="infos_courriel" name="infos_courriel" value="oui">
+    <label for="infos_courriel">J&rsquo;accepte de recevoir par courriel les informations et
+      communications de l&rsquo;association.</label>
+  </div>
+</fieldset>
+
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="piege">
+
+<button type="submit" class="bouton bouton--plein">Envoyer ma demande d&rsquo;adhésion</button>
+<p class="message" id="messageFormulaire" role="status"></p>
+</form>
+</div></section>
+
+<section class="section"><div class="wrap narrow">
+<h2 style="margin-top:0">Après votre demande</h2>
+<p>Aux termes de l&rsquo;article 7.1 des statuts, l&rsquo;admission est soumise à l&rsquo;agrément
+préalable du conseil d&rsquo;administration. Nul ne peut se prévaloir de la qualité de membre avant
+la notification de cet agrément. Le conseil apprécie librement les demandes et peut refuser une
+adhésion sans avoir à motiver sa décision (article 7.4).</p>
+</div></section>
+
+<script>
+(function () {
+  var f = document.getElementById('formAdhesion');
+  var msg = document.getElementById('messageFormulaire');
+  if (!f) return;
+  var tel = document.getElementById('telephone');
+  var messages = {
+    missing_field: 'Merci de remplir ce champ.',
+    field_too_long: 'Ce champ est trop long.',
+    invalid_field: "Ce champ n'est pas valide.",
+    body_too_large: 'Votre message est trop long.',
+    rate_limited: "Trop d'envois depuis cette connexion. Réessayez dans une minute.",
+    server_error: 'Le service est indisponible. Réessayez plus tard.'
+  };
+  var libelles = {
+    nom: 'Nom', prenom: 'Prénom', naissance: 'Date de naissance', adresse: 'Adresse',
+    code_postal: 'Code postal', commune: 'Commune', telephone: 'Téléphone', email: 'Courriel',
+    cotisation: 'Cotisation', montant_soutien: 'Montant de la cotisation de soutien',
+    reglement: 'Mode de règlement', statuts: 'Statuts',
+    engagement_republicain: "Contrat d'engagement républicain", confidentialite: 'Confidentialité',
+    interets: "Déclaration d'intérêts", situation: 'Situation à signaler'
+  };
+
+  // Shows a dependent block (amount, situation) only when its choice is selected.
+  function lier(nom, valeur, blocId, champId) {
+    var bloc = document.getElementById(blocId);
+    var champ = document.getElementById(champId);
+    function maj() {
+      var actif = f.querySelector('input[name="' + nom + '"]:checked');
+      var on = !!actif && actif.value === valeur;
+      bloc.hidden = !on;
+      champ.disabled = !on;
+      champ.required = on;
+    }
+    f.querySelectorAll('input[name="' + nom + '"]').forEach(function (r) {
+      r.addEventListener('change', maj);
+    });
+    maj();
+  }
+  lier('cotisation', 'soutien', 'bloc_montant', 'montant_soutien');
+  lier('interets', 'signale', 'bloc_situation', 'situation');
+
+  // The service expects exactly 10 digits: "+33 6 01…" or "06.01…" become "0601…".
+  function normaliser(v) {
+    v = v.replace(/[\s.\-]/g, '');
+    return v.indexOf('+33') === 0 ? '0' + v.slice(3) : v;
+  }
+  tel.addEventListener('invalid', function () {
+    tel.setCustomValidity(tel.validity.valueMissing ? '' :
+      'Indiquez un numéro à 10 chiffres, par exemple 06 01 02 03 04.');
+  });
+  f.addEventListener('input', function (e) {
+    e.target.removeAttribute('aria-invalid');
+    if (e.target === tel) tel.setCustomValidity('');
+  });
+
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (tel.value) tel.value = normaliser(tel.value);
+    msg.className = 'message';
+    msg.textContent = 'Envoi en cours…';
+    fetch(f.action, {
+      method: 'POST',
+      body: new FormData(f),
+      headers: { Accept: 'application/json' }
+    }).then(function (r) {
+      return r.json().then(function (j) { return { ok: r.ok, j: j }; });
+    }).then(function (x) {
+      if (x.ok && x.j.ok) {
+        f.reset();
+        msg.className = 'message message--succes';
+        msg.textContent = 'Merci, votre demande d\'adhésion est enregistrée.';
+      } else if (!afficherErreur(x.j.error, x.j.field)) {
+        throw new Error(x.j.error || 'refus du serveur');
+      }
+    }).catch(echec);
+  });
+
+  function afficherErreur(code, champ) {
+    var texte = messages[code];
+    if (!texte) return false;
+    var nom = champ && libelles[champ];
+    if (nom && (code === 'missing_field' || code === 'field_too_long' || code === 'invalid_field')) {
+      texte = nom + ' : ' + texte.charAt(0).toLowerCase() + texte.slice(1);
+      var saisie = document.getElementById(champ) || f.querySelector('[name="' + champ + '"]');
+      if (saisie) { saisie.setAttribute('aria-invalid', 'true'); saisie.focus(); }
+    }
+    msg.className = 'message message--erreur';
+    msg.textContent = texte;
+    return true;
+  }
+
+  function echec() {
+    msg.className = 'message message--erreur';
+    msg.innerHTML = "L'envoi a échoué. Écrivez-nous à " +
+      '<a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a>, ' +
+      'nous enregistrerons votre demande.';
+  }
+
+  // Sending without JavaScript: the service redirects to ?merci or ?erreur&error=<code>.
+  var q = window.location.search;
+  if (/[?&]merci(&|=|$)/.test(q)) {
+    msg.className = 'message message--succes';
+    msg.textContent = "Merci, votre demande d'adhésion est enregistrée.";
+    document.getElementById('adherer').scrollIntoView();
+  } else if (/[?&]erreur(&|=|$)/.test(q)) {
+    var m = /[?&]error=([a-z_]+)/.exec(q);
+    if (!afficherErreur(m && m[1])) echec();
+    document.getElementById('adherer').scrollIntoView();
+  }
+})();
+</script>
+
+<footer class="pied"><div class="wrap">
+  <div class="grille">
+    <div>
+      <h3>Marais Durable</h3>
+      <p>Association loi 1901 constitu&eacute;e le 4 septembre 2026.<br>
+        Faire conna&icirc;tre, prot&eacute;ger et d&eacute;fendre les paysages, la faune et la flore
+        des communes du Parc naturel r&eacute;gional du Marais poitevin.</p>
+    </div>
+    <div>
+      <h3>Nous &eacute;crire</h3>
+      <p><a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a></p>
+    </div>
+    <div>
+      <h3>Le site</h3>
+      <ul>
+        <li><a href="le-marais.html">Le marais</a></li>
+        <li><a href="faune-flore.html">Faune et flore</a></li>
+        <li><a href="actualites.html">Actualit&eacute;s</a></li>
+        <li><a href="petition.html">P&eacute;tition</a></li>
+        <li><a href="agir.html">Agir</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="mentions-legales.html">Mentions l&eacute;gales</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="legal">&copy; 2026 Association Marais Durable &mdash; Site sans cookie et sans traceur.
+    Photographies : Wikimedia Commons, <a href="mentions-legales.html#credits">voir les cr&eacute;dits</a>.</p>
+</div></footer>
+
+</body>
+</html>
