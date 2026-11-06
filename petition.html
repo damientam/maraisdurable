@@ -223,26 +223,25 @@ maraisdurable.com</p>
 <h2 style="margin-top:0">Signer la pétition</h2>
 
 <form class="formulaire" id="formPetition" method="POST"
-      action="https://formspree.io/f/VOTRE_IDENTIFIANT">
+      action="https://forms.gestemental.com/v1/maraisdurable/petition">
   <div class="champ">
     <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
-    <input type="text" id="prenom" name="prenom" required autocomplete="given-name">
+    <input type="text" id="prenom" name="prenom" required maxlength="100" autocomplete="given-name">
   </div>
   <div class="champ">
     <label for="nom">Nom <span aria-hidden="true">*</span></label>
-    <input type="text" id="nom" name="nom" required autocomplete="family-name">
+    <input type="text" id="nom" name="nom" required maxlength="100" autocomplete="family-name">
   </div>
   <div class="champ">
     <label for="email">Adresse électronique <span aria-hidden="true">*</span></label>
-    <input type="email" id="email" name="email" required autocomplete="email">
+    <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
   </div>
   <div class="champ">
     <label for="commune">Commune <span class="option">(facultatif)</span></label>
-    <input type="text" id="commune" name="commune" autocomplete="address-level2">
+    <input type="text" id="commune" name="commune" maxlength="100" autocomplete="address-level2">
   </div>
 
   <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="piege">
-  <input type="hidden" name="_subject" value="Nouvelle signature - petition Marais Durable">
 
   <div class="champ champ--case">
     <input type="checkbox" id="consentement" name="consentement" required value="oui">
@@ -278,6 +277,18 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
   var msg = document.getElementById('messageFormulaire');
   if (!f) return;
   var configure = f.action.indexOf('VOTRE_IDENTIFIANT') === -1;
+  var messages = {
+    missing_field: 'Merci de remplir ce champ.',
+    field_too_long: 'Ce champ est trop long.',
+    invalid_field: "Ce champ n'est pas valide.",
+    body_too_large: 'Votre message est trop long.',
+    rate_limited: "Trop d'envois depuis cette connexion. Réessayez dans une minute.",
+    server_error: 'Le service est indisponible. Réessayez plus tard.'
+  };
+  var libelles = {
+    prenom: 'Prénom', nom: 'Nom', email: 'Adresse électronique',
+    commune: 'Commune', consentement: 'Case de signature'
+  };
 
   f.addEventListener('submit', function (e) {
     if (!configure) {
@@ -295,20 +306,50 @@ signatures est ce qui donnera du poids à la démarche du conseil municipal comm
       body: new FormData(f),
       headers: { Accept: 'application/json' }
     }).then(function (r) {
-      if (r.ok) {
+      return r.json().then(function (j) { return { ok: r.ok, j: j }; });
+    }).then(function (x) {
+      if (x.ok && x.j.ok) {
         f.reset();
         msg.className = 'message message--succes';
         msg.textContent = 'Merci, votre signature est enregistrée.';
-      } else {
-        throw new Error('refus du serveur');
+      } else if (!afficherErreur(x.j.error, x.j.field)) {
+        throw new Error(x.j.error || 'refus du serveur');
       }
-    }).catch(function () {
-      msg.className = 'message message--erreur';
-      msg.innerHTML = "L'envoi a échoué. Écrivez-nous à " +
-        '<a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a>, ' +
-        'nous enregistrerons votre signature.';
-    });
+    }).catch(echec);
   });
+
+  function afficherErreur(code, champ) {
+    var texte = messages[code];
+    if (!texte) return false;
+    var nom = champ && libelles[champ];
+    if (nom && (code === 'missing_field' || code === 'field_too_long' || code === 'invalid_field')) {
+      texte = nom + ' : ' + texte.charAt(0).toLowerCase() + texte.slice(1);
+      var saisie = document.getElementById(champ);
+      if (saisie) saisie.focus();
+    }
+    msg.className = 'message message--erreur';
+    msg.textContent = texte;
+    return true;
+  }
+
+  function echec() {
+    msg.className = 'message message--erreur';
+    msg.innerHTML = "L'envoi a échoué. Écrivez-nous à " +
+      '<a href="mailto:contact@maraisdurable.com">contact@maraisdurable.com</a>, ' +
+      'nous enregistrerons votre signature.';
+  }
+
+  // Sending without JavaScript: the service redirects to ?merci or ?erreur&error=<code>.
+  var q = window.location.search;
+  if (/[?&]merci(&|=|$)/.test(q)) {
+    msg.className = 'message message--succes';
+    msg.textContent = 'Merci, votre signature est enregistrée.';
+    document.getElementById('signer').scrollIntoView();
+  } else if (/[?&]erreur(&|=|$)/.test(q)) {
+    var m = /[?&]error=([a-z_]+)/.exec(q);
+    if (!afficherErreur(m && m[1])) echec();
+    document.getElementById('signer').scrollIntoView();
+  }
 })();
 </script>
 
