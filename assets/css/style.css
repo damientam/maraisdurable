@@ -257,6 +257,12 @@ figcaption{font-size:.86rem;color:var(--pierre);margin-top:.5rem;line-height:1.4
 .galerie{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:1.6rem 0 0}
 .galerie figure{margin:0}
 .galerie img{aspect-ratio:4/3;object-fit:cover}
+.cartes{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:1.6rem 0 .4rem}
+.cartes figure{margin:0}
+.cartes a{display:block;border:1px solid var(--craie)}
+.cartes a:hover,.cartes a:focus-visible{border-color:var(--marais)}
+.cartes figcaption{color:var(--encre);font-weight:600}
+.source-cartes{font-size:.86rem;color:var(--pierre)}
 .duo{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
 .duo figure{margin-top:.4rem}
 .chiffres--marais .chiffre{border-left-color:var(--marais)}
