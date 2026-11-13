@@ -157,5 +157,29 @@ pour une assiette pouvant atteindre <strong>30 mètres de diamètre</strong>.</p
     Photographies : Wikimedia Commons, <a href="mentions-legales.html#credits">voir les cr&eacute;dits</a>.</p>
 </div></footer>
 
+<dialog class="visionneuse" id="visionneuse" aria-label="Carte en grand">
+  <button type="button" class="visionneuse-fermer" aria-label="Fermer la carte">&times;</button>
+  <img alt="">
+  <p class="visionneuse-legende"></p>
+</dialog>
+<script>
+(function () {
+  var d = document.getElementById('visionneuse');
+  if (!d || typeof d.showModal !== 'function') return;
+  var img = d.querySelector('img'), leg = d.querySelector('.visionneuse-legende');
+  document.querySelectorAll('.cartes a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var petite = a.querySelector('img'), fc = a.parentNode.querySelector('figcaption');
+      img.src = a.href; img.alt = petite.alt;
+      leg.textContent = fc ? fc.textContent : '';
+      d.showModal();
+    });
+  });
+  d.querySelector('.visionneuse-fermer').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  d.addEventListener('close', function () { img.removeAttribute('src'); });
+})();
+</script>
 </body>
 </html>

@@ -263,6 +263,12 @@ figcaption{font-size:.86rem;color:var(--pierre);margin-top:.5rem;line-height:1.4
 .cartes a:hover,.cartes a:focus-visible{border-color:var(--marais)}
 .cartes figcaption{color:var(--encre);font-weight:600}
 .source-cartes{font-size:.86rem;color:var(--pierre)}
+.visionneuse{border:0;padding:0;background:var(--papier);max-width:96vw;max-height:96vh;overflow:auto;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.visionneuse::backdrop{background:rgba(18,38,31,.85)}
+.visionneuse img{display:block;max-width:96vw;max-height:calc(96vh - 3rem);width:auto;height:auto;margin:0 auto}
+.visionneuse-legende{margin:0;padding:.6rem 3.5rem .7rem 1rem;font-size:.9rem;color:var(--encre)}
+.visionneuse-fermer{position:fixed;top:.8rem;right:.8rem;z-index:2;width:3rem;height:3rem;border-radius:50%;border:2px solid #fff;background:var(--encre);color:#fff;font-size:2rem;line-height:1;cursor:pointer}
+.visionneuse-fermer:hover,.visionneuse-fermer:focus-visible{background:var(--alerte)}
 .duo{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
 .duo figure{margin-top:.4rem}
 .chiffres--marais .chiffre{border-left-color:var(--marais)}
