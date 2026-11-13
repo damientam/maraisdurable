@@ -158,6 +158,7 @@ tbody tr:last-child td{border-bottom:none}
 .pied h3{color:var(--roseau);margin-top:0;font-size:1rem}
 .pied p,.pied li{font-size:.94rem}
 .pied ul{list-style:none;padding:0}
+.pied-logo{display:block;width:140px;height:auto;background:#fff;border-radius:12px;padding:10px;margin-bottom:1rem}
 .legal{border-top:1px solid rgba(233,236,227,.25);margin-top:2rem;padding-top:1.2rem;
   font-size:.8rem;color:#A8B3A4;font-family:system-ui,sans-serif}
 
